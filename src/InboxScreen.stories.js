@@ -29,18 +29,11 @@ Default.play = async ({ canvasElement }) => {
     expect(queryByText('You have no tasks')).not.toBeInTheDocument()
   })
 
-  // const getTask = () => getByRole('listitem', { name: 'Export logo' })
+  const getTask = () => getByRole('listitem', { name: 'Export logo' })
 
-  const pinButton = getByRole('button', { name: 'pin' })
+  const pinButton = within(getTask()).getByRole('button', { name: 'pin' })
 
   await userEvent.click(pinButton)
-
-  const unpinButton = getByRole('button', {
-    name: 'unpin',
-    // constiner: getTask(),
-  })
-
-  // expect(unpinButton).toBeInTheDocument()
 }
 
 export const Error = Template.bind({})
