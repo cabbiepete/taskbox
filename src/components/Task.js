@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 import {
   Checkbox,
   Flex,
@@ -7,8 +7,8 @@ import {
   Input,
   Box,
   VisuallyHidden,
-} from '@chakra-ui/react';
-import { BellIcon } from '@chakra-ui/icons';
+} from '@chakra-ui/react'
+import { BellIcon } from '@chakra-ui/icons'
 
 export const Task = ({
   task: { id, title, state },
@@ -45,7 +45,7 @@ export const Task = ({
       <Input
         variant="unstyled"
         flex="1 1 auto"
-        color={state === 'TASK_ARCHIVED' ? 'gray.400' : 'gray.700'}
+        color={state === 'TASK_ARCHIVED' ? 'gray.600' : 'gray.700'}
         textDecoration={state === 'TASK_ARCHIVED' ? 'line-through' : 'none'}
         fontSize="md"
         fontWeight="bold"
@@ -63,7 +63,7 @@ export const Task = ({
       onClick={() => onTogglePinTask(state, id)}
     />
   </Flex>
-);
+)
 
 Task.propTypes = {
   task: PropTypes.shape({
@@ -74,4 +74,4 @@ Task.propTypes = {
   onArchiveTask: PropTypes.func.isRequired,
   onTogglePinTask: PropTypes.func.isRequired,
   onEditTitle: PropTypes.func.isRequired,
-};
+}
